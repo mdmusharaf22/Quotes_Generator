@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="home()">Home</button>
+    <h3 id="displayName"></h3>
+    <p>Choose any one, It will generate the quotes</p>
+    <button onclick="life()">Life</button>
+    <button onclick="money()">Money</button>
+
+    <script>
+        let name = localStorage.getItem('name')
+        document.getElementById("displayName").innerHTML ='Hi ' +name;
+        function life() {            
+            fetch('https://api.api-ninjas.com/v1/quotes?category=life', {
+                method: "GET", 
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                    "X-Api-Key": "agQA5eMdToMBFhueM7QZGg==jA2DtFThSvmZHZoE" 
+                }
+            })
+            .then(response => response.json())
+            .then(data => console.log(data[0].quote)) 
+            .catch(error => console.error('Error:', error)); 
+        }
+
+        
+        function money(){
+            fetch('https://api.api-ninjas.com/v1/quotes?category=money', {
+                method: "GET", 
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                    "X-Api-Key": "agQA5eMdToMBFhueM7QZGg==jA2DtFThSvmZHZoE" 
+                }
+            })
+            .then(response => response.json())
+            .then(data => console.log(data[0].quote)) 
+            .catch(error => console.error('Error:', error)); 
+        }
+
+        function home(){
+            window.location.href = 'file:///C:/Users/MUJI/Downloads/Telegram%20Desktop/Quotes%20Generator/index.html'
+            window.onload()
+        }
+    </script>
+</body>
+</html>

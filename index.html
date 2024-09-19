@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes Generator</title>
+</head>
+<body>
+    <input type="text" name="generate_name" id="generateName">
+    <button onclick="generateQuotes()">Send</button>
+    <script>
+        function generateQuotes(){
+            let name = document.querySelector('#generateName');
+            if(name.value){
+                window.location.href = 'file:///C:/Users/MUJI/Downloads/Telegram%20Desktop/Quotes%20Generator/next.html'
+                localStorage.setItem('name',name.value)
+            }
+            else{
+                alert("not ok");
+            }
+        }
+    </script>
+</body>
+</html>
