@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quotes Generator</title>
 </head>
+<style>
+    .video{
+        height: 100vh;
+        width: 100%;
+    }
+</style>
 <body>
+    <video src="https://videos.pexels.com/video-files/4916726/4916726-sd_640_360_30fps.mp4" controls autoplay loop muted class="video"></video>
+    <h1>Enter Your Name</h1>
     <input type="text" name="generate_name" id="generateName">
     <button onclick="generateQuotes()">Send</button>
     <script>
@@ -16,7 +24,7 @@
                 localStorage.setItem('name',name.value)
             }
             else{
-                alert("not ok");
+                alert("Please enter your name");
             }
         }
     </script>

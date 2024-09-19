@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quotes</title>
 </head>
 <body>
     <button onclick="home()">Home</button>
@@ -11,6 +11,8 @@
     <p>Choose any one, It will generate the quotes</p>
     <button onclick="life()">Life</button>
     <button onclick="money()">Money</button>
+
+    <div id="displayQuote"></div>
 
     <script>
         let name = localStorage.getItem('name')
@@ -24,7 +26,7 @@
                 }
             })
             .then(response => response.json())
-            .then(data => console.log(data[0].quote)) 
+            .then(data => document.getElementById('displayQuote').innerHTML=data[0].quote) 
             .catch(error => console.error('Error:', error)); 
         }
 
@@ -38,7 +40,7 @@
                 }
             })
             .then(response => response.json())
-            .then(data => console.log(data[0].quote)) 
+            .then(data => document.getElementById('displayQuote').innerHTML=data[0].quote) 
             .catch(error => console.error('Error:', error)); 
         }
 
